@@ -17,6 +17,6 @@ app.use("/keyValueStore", route);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.listen(config.PORT, () => {
-    console.log(`app started on port ${config.PORT}`);
+app.listen(process.env.PORT || config.PORT, () => {
+    console.log(`app started on port ${process.env.PORT || config.PORT}`);
 });
