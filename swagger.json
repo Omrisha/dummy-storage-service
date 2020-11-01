@@ -1,0 +1,69 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.1.0",
+        "title": "Dummy Storage Service",
+        "description": "Dummy Storage Service API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "paths": {
+        "/KeyValueStore": {
+            "get": {
+                "summary": "Get all key-value pairs stored",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array"
+                        }
+                    }
+                }
+            }
+        },
+        "/KeyValueStore/{key}": {
+            "post": {
+                "summery": "Store a new value for provided key",
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "required": "true"
+                    }
+                ],
+                "requestBody": {
+                    "required": "true",
+                    "description": "Value",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
