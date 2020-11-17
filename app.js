@@ -12,7 +12,7 @@ var app = express();
 
 var jsonParser = bodyParser.json();
 
-seed();
+//seed();
 
 app.use("/keyValueStore", jsonParser);
 
